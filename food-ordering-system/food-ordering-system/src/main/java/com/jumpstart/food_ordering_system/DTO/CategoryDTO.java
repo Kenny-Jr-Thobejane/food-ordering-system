@@ -1,37 +1,29 @@
 package com.jumpstart.food_ordering_system.DTO;
 
-/**
- * Data Transfer Object (DTO) for Category data.
- * Used to transfer data between process layers without exposing core Entity logic.
- */
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 public class CategoryDTO {
 
-    // Unique identification token for mapping the category.
     private Long id;
 
-    // Display name descriptive label of the category.
+    @NotBlank(message = "Category name is required")
+    @Size(min = 2, max = 50, message = "Name must be 2-50 characters")
     private String name;
 
-    // Default constructor for framework initialization and serialization.
-    public CategoryDTO() {
-    }
-
-    // Retrieves the current category identification value.
+    // Standard Getters and Setters
     public Long getId() {
         return id;
     }
 
-    // Updates or assigns the category identification value.
     public void setId(Long id) {
         this.id = id;
     }
 
-    // Retrieves the current string label of the category.
     public String getName() {
         return name;
     }
 
-    // Updates or assigns the string label of the category.
     public void setName(String name) {
         this.name = name;
     }
