@@ -1,5 +1,5 @@
 * ***Purpose of Each Package:***
-- **Controller:**
+* **Controller:**
 \* Purpose: It manages the API endpoints and handles incoming HTTP requests.
 
 &#x20;  \* Role: It acts as the entry point of the application to receive data from a client and calls the appropriate service logic, and returns the HTTP response.
@@ -9,7 +9,7 @@
 
 
 &#x20;  **- Service:**
-   \* Purpose: Manages the API endpoints and handles incoming HTTP requests.
+\* Purpose: Manages the API endpoints and handles incoming HTTP requests.
 
 &#x20;  \* Role: It acts as the entry point to the application. It receives data from the client and calls the appropriate service logic and returns the HTTP response (and status codes).
 
@@ -18,14 +18,14 @@
 
 
 &#x20;  **- Repository:**
-   \* Purpose: It manages the data access and communication with the database.
+\* Purpose: It manages the data access and communication with the database.
 
 &#x20;  \* Role: It provides CRUD (CREATE, READ, UPDATE, DELETE) capabilities by interacting directly with the data storage layer.
 
 
 
 &#x20;  - **Entity:**
-   \* Purpose: It represents the database schema as Java Objects
+\* Purpose: It represents the database schema as Java Objects
 
 &#x20;  \* Role: it calls models, each entity class the maps directly to a specific table in the database, and its field maps to the table columns.
 
@@ -39,7 +39,7 @@
 
 &#x20;  \* Role: It prevents sensitive database entity details from being exposed to the frontend.
 
-&#x20;  
+&#x20;
 
 &#x20;  - **Config:**
 
@@ -57,7 +57,8 @@
 
 &#x20;  \* Role: It centralises how the application responds to errors. It formats user-friendly error messages and proper HTTP status codes for the client.
 
-&#x20;  \* Key Annotation: @ControllerAdvice, @ExceptionHandler	  
+&#x20;  \* Key Annotation: @ControllerAdvice, @ExceptionHandler
+
 
 
 
@@ -110,4 +111,23 @@ A JSON is a text-based data interchange format that writes transmit data between
 ***9.) What is Dependency Injection?***
 
 It is a design pattern that is used to communicate between classes and their dependencies. This method helps the required dependencies to make the code easier to test.
+
+**--Endpoint:**
+  | Method | URL                       | Body                   |
+
+&#x20; |--------|---------------------------|------------------------|
+
+&#x20; | POST   | /api/categories           | { "name": "Grapes }    |
+
+&#x20; | GET    | /api/categories           | - 200 OK               |
+
+&#x20; | GET    | /api/categories/{2}       | - 200 Ok               |
+
+&#x20; | PUT    | /api/categories/{4}      | { "name": "Appetizers"} |
+
+&#x20; | DELETE | /api/categories/{4}      | - 201 No Content       |
+
+
+
+
 
