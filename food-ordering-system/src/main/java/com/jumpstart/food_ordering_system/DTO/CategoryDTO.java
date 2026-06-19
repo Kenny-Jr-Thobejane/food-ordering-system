@@ -1,17 +1,13 @@
 package com.jumpstart.food_ordering_system.DTO;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
-
 public class CategoryDTO {
 
     private Long id;
-    private String description;
 
     @NotBlank(message = "Category name is required")
     @Size(min = 2, max = 50, message = "Name must be 2-50 characters")
     private String name;
-    
+
     // Standard Getters and Setters
     public Long getId() {
         return id;
@@ -27,13 +23,5 @@ public class CategoryDTO {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 }

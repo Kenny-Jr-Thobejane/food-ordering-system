@@ -48,8 +48,6 @@ public class CategoryServiceImpl implements CategoryService {
                 .orElseThrow(() -> new CategoryNotFoundException("Category not found with id: " + id));
         
         categoryEntity.setName(dto.getName());
-        categoryEntity.setDescription(dto.getDescription()); // Keep description updated too
-        
         CategoryEntity updatedCategory = categoryRepository.save(categoryEntity);
         return convertToDto(updatedCategory);
     }
@@ -66,7 +64,6 @@ public class CategoryServiceImpl implements CategoryService {
         CategoryDTO dto = new CategoryDTO();
         dto.setId(categoryEntity.getId());
         dto.setName(categoryEntity.getName());
-        dto.setDescription(categoryEntity.getDescription()); // Successfully Added
         return dto;
     }
 
@@ -74,7 +71,6 @@ public class CategoryServiceImpl implements CategoryService {
     private CategoryEntity convertToEntity(CategoryDTO dto) {
         CategoryEntity categoryEntity = new CategoryEntity();
         categoryEntity.setName(dto.getName());
-        categoryEntity.setDescription(dto.getDescription()); // Successfully Added
         return categoryEntity;
     }
 }
