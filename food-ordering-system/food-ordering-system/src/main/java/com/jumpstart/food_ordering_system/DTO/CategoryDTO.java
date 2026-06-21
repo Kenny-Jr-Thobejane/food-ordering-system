@@ -1,8 +1,5 @@
 package com.jumpstart.food_ordering_system.DTO;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
-
 public class CategoryDTO {
 
     private Long id;
